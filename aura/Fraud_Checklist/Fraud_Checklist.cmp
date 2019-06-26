@@ -1,0 +1,11 @@
+<aura:component controller="Fraud_Checklist_Controller" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute type="Fraud_checklist__c[]" name="checklist"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.getChecklist}"/>
+    
+    <lightning:datatable data="{! v.checklist }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+</aura:component>
